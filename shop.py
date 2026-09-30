@@ -3,7 +3,7 @@ import sqlite3
 con = sqlite3.connect("shop.db")
 cur = con.cursor()
 
-# Create product table
+
 cur.execute("""
 CREATE TABLE IF NOT EXISTS product(
     id INTEGER PRIMARY KEY,
@@ -14,10 +14,10 @@ CREATE TABLE IF NOT EXISTS product(
 )
 """)
 
-# Delete old records
+
 cur.execute("DELETE FROM product")
 
-# Insert 10 records
+
 cur.execute("INSERT INTO product VALUES(1,'Laptop',45000,5,'Electronics')")
 cur.execute("INSERT INTO product VALUES(2,'Mobile',20000,10,'Electronics')")
 cur.execute("INSERT INTO product VALUES(3,'Keyboard',1200,20,'Computer')")
@@ -34,7 +34,7 @@ con.commit()
 print("Product table created successfully")
 print("10 records inserted successfully")
 
-# Display records
+
 print("\nProduct Records:")
 
 cur.execute("SELECT * FROM product")
